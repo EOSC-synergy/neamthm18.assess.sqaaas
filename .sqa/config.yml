@@ -1,0 +1,18 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.10
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.FAIR:
+    repos:
+      this_repo:
+        commands:
+        - fair-eva.py -ID https://doi.org/10.13127/tsunami/neamthm18 -R oai-pmh -B
+          https://oai.datacite.org/oai --tool_endpoint http://localhost:9090/v1.0/rda/rda_all
+        container: qc.fair_ugly-lavender-chimpanzee
+timeout: 5400

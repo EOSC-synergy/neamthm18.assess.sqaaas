@@ -1,0 +1,9 @@
+services:
+  qc.fair_ugly-lavender-chimpanzee:
+    image: eoscsynergy/sqaaas-fair_eva:1.7.10-alpha2
+    volumes:
+    - source: ./
+      target: /sqaaas-build
+      type: bind
+    working_dir: /sqaaas-build
+version: '3.7'
